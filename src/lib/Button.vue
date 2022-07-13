@@ -1,11 +1,11 @@
 <template>
   <button class="gulu-button" :class="classes" :disabled="disabled">
     <span v-if="loading" class="gulu-loadingIndicator"></span>
-    <slot/>
+    <slot />
   </button>
 </template>
 <script lang="ts">
-import {computed} from "vue";
+import { computed } from "vue";
 
 export default {
   props: {
@@ -31,7 +31,7 @@ export default {
     }
   },
   setup(props) {
-    const {theme, size, level} = props;
+    const { theme, size, level } = props;
     const classes = computed(() => {
       return {
         [`gulu-theme-${theme}`]: theme,
@@ -39,7 +39,7 @@ export default {
         [`gulu-level-${level}`]: level
       };
     });
-    return {classes};
+    return { classes };
   },
 };
 </script>
@@ -62,14 +62,14 @@ $grey: grey;
   justify-content: center;
   align-items: center;
   white-space: nowrap;
-  background: white;
+  background: rgb(255, 255, 255);
   color: $color;
   border: 1px solid $border-color;
   border-radius: $radius;
   box-shadow: 0 1px 0 fade-out(black, 0.95);
   transition: background 250ms;
 
-  & + & {
+  &+& {
     margin-left: 8px;
   }
 
@@ -92,7 +92,8 @@ $grey: grey;
     box-shadow: none;
     color: $blue;
 
-    &:hover, &:focus {
+    &:hover,
+    &:focus {
       color: lighten($blue, 10%);
     }
   }
@@ -102,8 +103,10 @@ $grey: grey;
     box-shadow: none;
     color: inherit;
 
-    &:hover, &:focus {
-      background: darken(white, 5%);;
+    &:hover,
+    &:focus {
+      background: darken(white, 5%);
+      ;
     }
   }
 
@@ -187,20 +190,21 @@ $grey: grey;
     }
   }
 
-  &.gulu-theme-link, &.gulu-theme-text {
+  &.gulu-theme-link,
+  &.gulu-theme-text {
     &[disabled] {
       cursor: not-allowed;
       color: $grey;
     }
   }
 
-  > .gulu-loadingIndicator {
+  >.gulu-loadingIndicator {
     width: 14px;
     height: 14px;
     display: inline-block;
     margin-right: 4px;
     border-radius: 8px;
-    border-color: $blue $blue $blue transparent;
+    border-color: red yellow green blue;
     border-style: solid;
     border-width: 2px;
     animation: gulu-spin 1s infinite linear;
@@ -211,9 +215,9 @@ $grey: grey;
   0% {
     transform: rotate(0deg)
   }
+
   100% {
     transform: rotate(360deg)
   }
 }
-
 </style>

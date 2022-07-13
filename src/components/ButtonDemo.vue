@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Button 示例</h1>
+    <h1>按钮 Button</h1>
     <Demo :component="Button1Demo" />
     <Demo :component="Button2Demo" />
     <Demo :component="Button3Demo" />
@@ -18,19 +18,19 @@ import Button4Demo from "./Button4.demo.vue";
 import Button5Demo from "./Button5.demo.vue";
 
 export default {
-  data () {
+  data() {
     return {
       loading: false,
       loading2: false
     }
   },
   methods: {
-    toLoading () {
+    toLoading() {
       this.loading = true;
     }
 
   },
-  components: {Demo},
+  components: { Demo },
   setup() {
     return {
       Button1Demo,
