@@ -1,5 +1,5 @@
 <demo>
-一键打开 Dialog
+ 一键打开
 </demo>
 <template>
   <div>

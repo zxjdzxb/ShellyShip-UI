@@ -4,10 +4,11 @@
 <template>
   <div>
     <Button @click="toggle">打开对话框</Button>
+
     <Dialog v-model:visible="x" :closeOnClickOverlay="false" :ok="f1" :cancel="f2">
       <template v-slot:content>
-        <strong>hi</strong>
-        <div>hi2</div>
+        <strong>Custom header and footer</strong>
+        <div>hello</div>
       </template>
       <template v-slot:title>
         <strong>加粗的标题</strong>
@@ -38,7 +39,7 @@ export default {
     const f1 = () => {
       return false
     }
-    const f2 = () => {}
+    const f2 = () => { }
     return {
       x,
       toggle,
