@@ -1,6 +1,7 @@
 # UI-Vite 搭建官网
 ## 安装cva
-``````
+
+```
 $ yarn global add create-vite-app
 //或者
 $ npm i -g create-vite-app
