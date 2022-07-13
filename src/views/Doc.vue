@@ -1,6 +1,6 @@
 <template>
   <div class="layout">
-    <Topnav toggleMenuButtonVisible class="nav"/>
+    <Topnav toggleMenuButtonVisible class="nav" />
     <div class="content">
       <aside v-if="asideVisible">
         <h2>文档</h2>
@@ -32,7 +32,7 @@
         </ol>
       </aside>
       <main>
-        <router-view/>
+        <router-view />
       </main>
     </div>
   </div>
@@ -40,32 +40,34 @@
 
 <script lang="ts">
 import Topnav from '../components/Topnav.vue'
-import {inject, Ref} from "vue";
+import { inject, Ref } from "vue";
 
 export default {
-  components: {Topnav},
+  components: { Topnav },
   setup() {
     const asideVisible = inject<Ref<boolean>>('asideVisible') // get
-    return {asideVisible}
+    return { asideVisible }
   }
 }
 </script>
 
 <style lang="scss" scoped>
 $aside-index : 10;
+
 .layout {
   display: flex;
   flex-direction: column;
   height: 100vh;
 
-  > .nav {
+  >.nav {
     flex-shrink: 0;
   }
 
-  > .content {
+  >.content {
     flex-grow: 1;
     padding-top: 60px;
     padding-left: 156px;
+
     @media (max-width: 500px) {
       padding-left: 0;
     }
@@ -75,11 +77,11 @@ $aside-index : 10;
 .content {
   display: flex;
 
-  > aside {
+  >aside {
     flex-shrink: 0;
   }
 
-  > main {
+  >main {
     flex-grow: 1;
     padding: 16px;
     background: white;
@@ -87,7 +89,7 @@ $aside-index : 10;
 }
 
 aside {
-  background: #ade6d6;
+  background: #d1eff6;
   width: 150px;
   position: fixed;
   top: 0;
@@ -95,18 +97,20 @@ aside {
   padding: 70px 0 16px;
   height: 100%;
   z-index: $aside-index;
-  > h2 {
+
+  >h2 {
     margin-bottom: 4px;
     padding: 0 16px;
   }
 
-  > ol {
-    > li {
+  >ol {
+    >li {
       >a {
         display: block;
         padding: 4px 16px;
         text-decoration: none;
       }
+
       .router-link-active {
         background: white;
       }
@@ -117,5 +121,4 @@ aside {
 main {
   overflow: auto;
 }
-
 </style>

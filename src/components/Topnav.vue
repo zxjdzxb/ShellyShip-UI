@@ -16,7 +16,7 @@
   </div>
 </template>
 <script lang="ts">
-import {inject, Ref} from "vue";
+import { inject, Ref } from "vue";
 
 export default {
   props: {
@@ -25,17 +25,17 @@ export default {
       default: false
     }
   },
-  setup(){
-    const asideVisible = inject < Ref < boolean >> ("asideVisible");// get
-    const toggleAside = ()=>{
+  setup() {
+    const asideVisible = inject<Ref<boolean>>("asideVisible");// get
+    const toggleAside = () => {
       asideVisible.value = !asideVisible.value
     }
-    return {toggleAside: toggleAside}
+    return { toggleAside: toggleAside }
   }
 }
 </script>
 <style lang="scss" scoped>
-$color: #007974;
+$color: #40326b;
 
 .topnav {
   color: $color;
@@ -48,25 +48,28 @@ $color: #007974;
   z-index: 20;
   justify-content: center;
   align-items: center;
-  > .logo {
+
+  >.logo {
     max-width: 6em;
     margin-right: auto;
+
     >svg {
       width: 32px;
       height: 32px;
     }
   }
 
-  > .menu {
+  >.menu {
     display: flex;
     white-space: nowrap;
     flex-wrap: nowrap;
 
-    > li {
+    >li {
       margin: 0 1em;
     }
   }
-  > .toggleAside {
+
+  >.toggleAside {
     width: 32px;
     height: 32px;
     position: absolute;
@@ -77,10 +80,18 @@ $color: #007974;
     background: fade-out(black, 0.9);
   }
 
-  @media(max-width: 500px){
-    >.menu{display: none;}
-    >.logo{margin: 0 auto;}
-    >.toggleAside{display: inline-block;}
+  @media(max-width: 500px) {
+    >.menu {
+      display: none;
+    }
+
+    >.logo {
+      margin: 0 auto;
+    }
+
+    >.toggleAside {
+      display: inline-block;
+    }
   }
 }
 </style>
