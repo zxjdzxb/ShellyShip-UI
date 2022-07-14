@@ -2,7 +2,6 @@
   <h1>Dialog 示例</h1>
   <Demo :component="Dialog1Demo" />
   <Demo :component="Dialog2Demo" />
-  <Demo :component="Dialog3Demo" />
 </template>
 
 <script lang="ts">

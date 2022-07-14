@@ -22,8 +22,7 @@
 </template>
 
 <script lang="ts">
-import Button from './Button.vue'
-
+import Button from "./Button.vue";
 export default {
   props: {
     visible: {
@@ -42,7 +41,7 @@ export default {
     }
   },
   components: {
-    Button
+    Button,
   },
   setup(props, context) {
     const close = () => {
