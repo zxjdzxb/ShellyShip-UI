@@ -7,7 +7,7 @@
 
     <Dialog v-model:visible="x" :closeOnClickOverlay="false" :ok="f1" :cancel="f2">
       <template v-slot:content>
-        <strong>Custom header and footer</strong>
+        <strong>hi</strong>
         <div>hello</div>
       </template>
       <template v-slot:title>
